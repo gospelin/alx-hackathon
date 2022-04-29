@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - prints string using puts function
+ *	main - prints string using puts function
  *
- * return - Always 0
+ *	return:Always 0 (Success)
  *
  */
 
