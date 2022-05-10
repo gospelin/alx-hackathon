@@ -1,3 +1,7 @@
+*
+!*/
+!*.*
 *.swp
 .executables
 *.out
+[[:digit:]]-main.c
