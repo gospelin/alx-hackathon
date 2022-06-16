@@ -1,3 +1,5 @@
 *.swp
 .executables
 *.out
+.vscode
+[[:digit:]]-main.c
