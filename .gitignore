@@ -24,5 +24,3 @@
 # Ignore files with main.c
 #[[:digit:]]-main.c
 *-main*.c
-
-

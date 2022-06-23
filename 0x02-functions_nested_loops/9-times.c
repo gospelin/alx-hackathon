@@ -1,16 +1,16 @@
 #include "main.h"
 
 /**
- * times_table - prints out times table
+ * times_table - Displays the multiplication table
  *
  */
+
 void times_table(void)
 {
-	int i, j, n = 9;
 
-	for (i = 0; i <= n; i++)
+	for (int i = 0; i <= 9; i++)
 	{
-		for (j = 0; j <= n; j++)
+		for (int j = 0; j <= 9; j++)
 		{
 			int product = i * j;
 
@@ -19,27 +19,24 @@ void times_table(void)
 				_putchar((product / 10) + '0');
 				_putchar((product % 10) + '0');
 
-				if (j != n)
+				if (j == 9)
 				{
-					_putchar(',');
-					_putchar(' ');
+					continue;
 				}
 			}
 			else
 			{
 				_putchar(product + '0');
 
-				if (j != n)
+				if (j == 9)
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
+					continue;
 				}
 			}
+			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
 		}
 		_putchar('\n');
- 
 	}
-
 }
-

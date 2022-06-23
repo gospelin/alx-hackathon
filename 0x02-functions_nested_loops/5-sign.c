@@ -3,10 +3,10 @@
 /**
  * print_sign - prints the sign of the number
  *
- * @n: Holds the number
- * Return: 1 and prints + if n is greater than zero,
- * 0 and prints 0 if n is zero,
- * -1 and prints - if n is less than zero
+ *	Return: returns 1 and prints +, if positive,
+ *	-1 and prints -, if negative
+ *	0 and prints 0, if zero.
+ *	@n: argument to hold the digit
  */
 
 int print_sign(int n)
@@ -26,4 +26,7 @@ int print_sign(int n)
 		_putchar('-');
 		return (-1);
 	}
+	_putchar('0');
+	
+	return (0);
 }
