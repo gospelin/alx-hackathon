@@ -1,5 +1,28 @@
+# ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all directories
+!*/
+
+### Above combination will ignore all files without extension ### 
+
+# Igonore Emacs files
 *.swp
+
+# Ignore /executable directory
 .executables
+
+# Ignore make files
 *.out
+
+# Ignore vscode directory
 .vscode
-[[:digit:]]-main.c
+
+# Ignore files with main.c
+#[[:digit:]]-main.c
+*-main*.c
+
+
