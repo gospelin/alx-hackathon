@@ -28,12 +28,9 @@ void rev_string(char *s)
 	int length, i;
 	char *start, *end, temp;
 
-	length = _strlen(s);
+	length = _strlen(s) - 1;
 	start = s;
-	end = s;
-
-	for (i = 0; i < (length - 1); i++, end++)
-		;
+	end = s + length;
 
 	for (i = 0; i < (length/2); i++, start++, end--)
 	{
