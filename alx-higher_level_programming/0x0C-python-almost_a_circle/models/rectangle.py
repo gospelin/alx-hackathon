@@ -79,3 +79,9 @@ class Rectangle(Base):
 
     def __str__(self):
         return f"[Rectangle] ({(self.id)}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def update(self, *args):
+        attribute_list = ["id", "width", "height", "x", "y"]
+
+        for count, arg in enumerate(args):
+            setattr(self, attribute_list[count], arg)
