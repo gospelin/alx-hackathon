@@ -2,6 +2,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -39,7 +40,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         if type(value) is not int:
@@ -68,7 +69,7 @@ class Rectangle(Base):
         space_y = ""
         rectangle = ""
 
-        space_x += " " * self.__x 
+        space_x += " " * self.__x
         space_y += "\n" * self.__y
 
         rectangle += space_y
@@ -78,7 +79,8 @@ class Rectangle(Base):
         print(rectangle, end='')
 
     def __str__(self):
-        return f"[Rectangle] ({(self.id)}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({(self.id)}) \
+            {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
 
@@ -91,3 +93,12 @@ class Rectangle(Base):
         if kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        attribute_list = ["id", "width", "height", "x", "y"]
+        new_dict = dict()
+
+        for key in attribute_list:
+            new_dict[key] = getattr(self, key)
+
+        return new_dict
