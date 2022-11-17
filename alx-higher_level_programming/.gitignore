@@ -15,6 +15,8 @@
 # Ignore CPython files
 __pycache__
 *-main.py
+.pytest_*
+.vscode
 
 # Ignore Json File
 *.json
