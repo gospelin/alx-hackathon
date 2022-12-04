@@ -6,7 +6,7 @@ The module is concerned with handling all storages of respective files
 """
 
 import json
-import os.path
+import os
 
 class Filestorage():
     """The file storage class."""
@@ -31,9 +31,17 @@ class Filestorage():
         for key, value in Filestorage.__objects.items():
             dictionary[key] = value.to_dict()
 
-        with open(Filestorage.__file_path, 'w') as outfile:
-            json.dump(dictionary, outfile)
+        if os.path.exists(Filestorage.__file_path):
+            os.remove(Filestorage.__file_path)
+            with open(Filestorage.__file_path, 'w') as output_file:
+                json.dump(dictionary, output_file)
 
     def reload(self):
-        pass
+        from models.base_model import BaseModel
 
+        dct = {'BaseModel': BaseModel}
+        if os.path.exists(Filestorage.__file_path):
+            with open(Filestorage.__file_path, 'r') as input_file:
+                for key, value in json.load(input_file).items():
+                    self.new(dct[value['__class__']](**value))
+ 
