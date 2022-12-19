@@ -5,6 +5,11 @@ import cmd
 from sys import exit
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.review import Review
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
 from models import storage
 import shlex
 
@@ -15,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
     
-    classes_list = ['BaseModel', 'User']
+    classes_list = ['BaseModel', 'User', 'State', 'Review', 'Amenity', 'City', 'Place']
 
     def do_quit(self, _):
         """Quit command to exit the interpreter"""
@@ -35,7 +40,8 @@ class HBNBCommand(cmd.Cmd):
         Syntax: create <class name>
         """
 
-        model_classes = {'BaseModel': BaseModel, 'User': User}
+        model_classes = {'BaseModel': BaseModel, 'User': User, 'State': State, \
+            'Review': Review, 'Amenity': Amenity, 'City': City, 'Place': Place}
         if not model:
             print("** class name missing **")
         elif str(model) not in HBNBCommand.classes_list:
