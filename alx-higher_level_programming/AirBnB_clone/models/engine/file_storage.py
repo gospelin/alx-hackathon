@@ -39,8 +39,14 @@ class Filestorage():
     def reload(self):
         from models.base_model import BaseModel
         from models.user import User
+        from models.state import State
+        from models.review import Review
+        from models.amenity import Amenity
+        from models.city import City
+        from models.place import Place
 
-        dct = {'BaseModel': BaseModel, 'User': User}
+        dct = {'BaseModel': BaseModel, 'User': User, 'State': State, \
+            'Review': Review, 'Amenity': Amenity, 'City': City, 'Place': Place }
         if os.path.exists(Filestorage.__file_path):
             with open(Filestorage.__file_path, 'r') as input_file:
                 for key, value in json.load(input_file).items():
